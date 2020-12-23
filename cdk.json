@@ -1,0 +1,105 @@
+{
+  "app": "python3 app.py",
+  "context": {
+    "@aws-cdk/core:enableStackNameDuplicates": "true",
+    "aws-cdk:enableDiffNoFail": "true",
+    "subnet": {
+      "vpcId": {
+        "Id": "VpcId",
+        "Type": "String",
+        "Default": "vpc-1234",
+        "Description": "VPC id for subnet"
+      },
+      "sharedAccountId": {
+        "Id": "ShareToAccountId",
+        "Type": "String",
+        "Default": "",
+        "Description": "Share To Account Id"
+      },
+      "EnvironmentName": {
+        "Id": "EnvironmentName",
+        "Type": "String",
+        "Default": "",
+        "Description": "An environment name that will be prefixed to resource names"
+      },
+      "ApplicationName": {
+        "Id": "ApplicationName",
+        "Type": "String",
+        "Default": "event",
+        "Description": "Service Application name"
+      },
+      "PublicSubnetAId": {
+        "Id": "PublicSubnetAId",
+        "Type": "String",
+        "Default": "",
+        "Description": "Please enter the a-zone subnet-id of public for NATGateway on private subnet"
+      },
+      "PublicSubnetCId": {
+        "Id": "PublicSubnetCId",
+        "Type": "String",
+        "Default": "",
+        "Description": "Please enter the c-zone subnet-id of public for NATGateway on private subnet"
+      },
+      "PrivateWebSubnetACidr": {
+        "Id": "privateWebSubnetACidr",
+        "Type": "String",
+        "Default": "10.0.0.0/32",
+        "Description": "Please enter the IP range (CIDR notation) for the Private subnet(in the 1st Availability Zone(Shared Subnet)"
+      },
+      "PrivateWebSubnetCCidr": {
+        "Id": "privateWebSubnetCCidr",
+        "Type": "String",
+        "Default": "10.0.0.0/32",
+        "Description": "Please enter the IP range (CIDR notation) for the Private subnet(in the 2nd Availability Zone(Shared Subnet)"
+      },
+      "PrivateDbSubnetACidr": {
+        "Id": "privateDbSubnetACidr",
+        "Type": "String",
+        "Default": "10.0.0.0/32",
+        "Description": "Please enter the IP range (CIDR notation) for the Private subnet(in the 1st Availability Zone(Shared Subnet)"
+      },
+      "PrivateDbSubnetCCidr": {
+        "Id": "privateDbSubnetCCidr",
+        "Type": "String",
+        "Default": "10.0.0.0/32",
+        "Description": "Please enter the IP range (CIDR notation) for the Private subnet(in the 2nd Availability Zone(Shared Subnet)"
+      },
+      "CreateEndpoints": {
+        "Id": "CreateEndpoints",
+        "Type": "String",
+        "Default": "No",
+        "Description": "OPTIONAL: Create VPC Endpoints ( S3, EC2Messages, SSM, SSMMessages )"
+      },
+      "CreateNatGateway": {
+        "Id": "CreateNatGateway",
+        "Type": "String",
+        "Default": "No",
+        "Description": "OPTIONAL: Create 2 NAT gateway"
+      },
+      "ExistNatGatewayIdA": {
+        "Id": "ExistNatGatewayIdA",
+        "Type": "String",
+        "Default": "",
+        "Description": "Nat a-zone"
+      },
+      "ExistNatGatewayIdC": {
+        "Id": "ExistNatGatewayIdC",
+        "Type": "String",
+        "Default": "",
+        "Description": "Nat c-zone"
+      },
+      "ConnectTransitGateway": {
+        "Id": "ConnectTransitGateway",
+        "Type": "String",
+        "Default": "Yes",
+        "Description": "OPTIONAL: Connect Transit gateway in Routing Table all"
+      },
+      "ExistTransitGateway": {
+        "Id": "ExistTransitGateway",
+        "Type": "String",
+        "Default": "",
+        "Description": "Exist Current TransitGateway"
+      }
+    }
+  }
+}

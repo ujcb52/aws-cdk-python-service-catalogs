@@ -1,0 +1,9 @@
+-e .
+
+aws-cdk.core==1.58
+aws-cdk.aws-servicecatalog==1.58
+aws-cdk.aws-ssm==1.58
+aws-cdk.aws-s3==1.58
+aws-cdk.aws-ec2==1.58
+aws-cdk.aws-cloudformation==1.58
+aws-cdk.aws-ram==1.58

@@ -1,0 +1,68 @@
+version: 0.2
+
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+  #secrets-manager:
+     # key: secret-id:json-key:version-stage:version-id
+     # key: secret-id:json-key:version-stage:version-id
+  #exported-variables:
+     # - variable
+     # - variable
+  #git-credential-helper: yes
+
+phases:
+  install:
+    #Ubuntu 표준 이미지 2.0 이상을 사용하는 경우 런타임 버전을 지정해야 합니다.
+    #런타임 버전을 지정하는 경우 Ubuntu 표준 이미지 2.0 이외의 이미지를 사용하면 빌드에 실패합니다.
+    #runtime-versions:
+      # name: version
+      # name: version
+    commands:
+      # - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      # - unzip awscliv2.zip
+      # - sudo ./aws/install
+      - npm install -g aws-cdk
+#      - pip install aws-cdk.aws-servicecatalog
+#      - pip install aws-cdk.aws-ssm
+#      - pip install aws-cdk.aws-s3
+#      - pip install aws-cdk.aws-iam
+      - pip install -r requirements.txt
+      # - command
+      # - command
+  pre_build:
+    commands:
+      - command ./build.sh
+      # - command
+  build:
+    commands:
+#      - cdk deploy portfolio
+      - cdk deploy catalog
+#      - cdk deploy cataloginstance
+      # - command
+  #post_build:
+    #commands:
+      # - command
+      # - command
+#reports:
+  #report-name-or-arn:
+    #files:
+      # - location
+      # - location
+    #base-directory: location
+    #discard-paths: yes
+    #file-format: JunitXml | CucumberJson
+#artifacts:
+  #files:
+    # - location
+    # - location
+  #name: $(date +%Y-%m-%d)
+  #discard-paths: yes
+  #base-directory: location
+#cache:
+  #paths:
+    # - paths
